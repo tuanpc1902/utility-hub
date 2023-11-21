@@ -1,0 +1,1 @@
+export const COMMON_CONSTANT = Object.freeze({});
