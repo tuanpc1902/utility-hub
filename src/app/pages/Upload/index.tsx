@@ -1,5 +1,9 @@
+import NoPermission from "~/app/components/NoPermission/NoPermission";
+
 function Upload() {
-    return <h2>Upload page</h2>;
+    return (
+        <NoPermission />
+    );
 }
 
 export default Upload;

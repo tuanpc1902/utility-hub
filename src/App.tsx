@@ -5,6 +5,7 @@ import { RoutesInterface } from '~/interfaces/CommonInterfaces.ts';
 import { v4 as uuidv4 } from 'uuid';
 import { ConfigProvider, theme } from 'antd';
 import { useLocalStorage } from '@uidotdev/usehooks';
+import NoPermission from './app/components/NoPermission/NoPermission';
 
 function App() {
     const { defaultAlgorithm, darkAlgorithm } = theme;
@@ -13,25 +14,26 @@ function App() {
     return (
         <ConfigProvider direction="ltr" theme={{ algorithm: themeMode === 'dark' ? darkAlgorithm : defaultAlgorithm }}>
             <Router>
-                <div className="App">
-                    <Switch>
-                        {publicRoutes.map((route: RoutesInterface) => {
-                            const Page = route.component;
-                            return (
-                                <Route
-                                    key={uuidv4()}
-                                    path={route.path}
-                                    exact={true}
-                                    render={(props) => (
-                                        <DefaultLayout key={uuidv4()}>
-                                            <Page {...props} />
-                                        </DefaultLayout>
-                                    )}
-                                ></Route>
-                            );
-                        })}
-                    </Switch>
-                </div>
+                <Switch>
+                    {publicRoutes.map((route: RoutesInterface) => {
+                        const Page = route.component;
+                        return (
+                            <Route
+                                key={uuidv4()}
+                                path={route.path}
+                                exact={true}
+                                render={(props) => (
+                                    // <DefaultLayout key={uuidv4()}>
+                                    //     <Page {...props} />
+                                    // </DefaultLayout>
+                                    route.path.indexOf("upload") !== -1 ? (
+                                        <Page {...props} />
+                                    ) : <NoPermission />
+                                )}
+                            ></Route>
+                        );
+                    })}
+                </Switch>
             </Router>
         </ConfigProvider>
     );

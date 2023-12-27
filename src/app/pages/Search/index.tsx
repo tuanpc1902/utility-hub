@@ -1,5 +1,7 @@
+import NoPermission from '~/app/components/NoPermission/NoPermission';
+
 function Search() {
-    return <h2>Search page</h2>;
+    return <NoPermission />;
 }
 
 export default Search;
