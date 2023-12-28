@@ -2,6 +2,7 @@
     "name": "utility-hub",
     "private": true,
     "version": "0.0.0",
+    "type": "module",
     "scripts": {
         "dev": "run-p gulpDev start",
         "production": "run-s gulpBuild build",

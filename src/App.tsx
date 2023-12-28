@@ -1,10 +1,10 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 import { ConfigProvider, theme } from 'antd';
-import { useLocalStorage } from '@uidotdev/usehooks';
 import DefaultLayout from './app/layouts/DefaultLayout/DefaultLayout.js';
 import { RoutesInterface } from './interfaces/CommonInterfaces.js';
 import { publicRoutes } from './routes/routes.js';
+import { useLocalStorage } from '@uidotdev/usehooks';
 
 function App() {
     const { defaultAlgorithm, darkAlgorithm } = theme;
