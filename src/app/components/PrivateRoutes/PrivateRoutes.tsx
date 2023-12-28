@@ -1,6 +1,6 @@
-import Upload from "~/app/pages/Upload";
-import NoPermission from "../NoPermission/NoPermission";
+import { Upload } from 'antd';
 import { Route } from 'react-router-dom';
+import NoPermission from '../NoPermission/NoPermission.js';
 
 type TPrivateRoutes = {
     component: React.ReactNode
@@ -10,8 +10,7 @@ type TPrivateRoutes = {
 }
 
 function PrivateRoutes(propsRoutes: TPrivateRoutes){
-    const {component, permission, key, path} = propsRoutes;
-    console.log("🚀 ~ file: PrivateRoutes.tsx:14 ~ PrivateRoutes ~ path:", path)
+    const { key, path} = propsRoutes;
     
     return (
         <Route key={key} path={path} render={props => 

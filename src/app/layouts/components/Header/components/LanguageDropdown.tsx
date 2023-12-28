@@ -1,6 +1,6 @@
 import { Select } from 'antd';
 import React from 'react';
-import i18n from '~/i18n/i18n';
+import i18n from '~/i18n/i18n.js';
 
 const LanguageDropdown: React.FC = () => {
     const languageOptions = [
