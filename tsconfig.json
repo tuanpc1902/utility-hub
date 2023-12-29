@@ -7,12 +7,10 @@
       "DOM",
       "DOM.Iterable"
     ],
-    "module": "ESNext",
+    "module": "nodeNext",
     "skipLibCheck": true,
     /* Bundler mode */
-    "moduleResolution": "bundler",
-    "allowImportingTsExtensions": true,
-    "resolveJsonModule": true,
+    "moduleResolution": "nodeNext",
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
